@@ -1,9 +1,11 @@
 var blockChecker = require('./modules/blockChecker');
 var express = require('express');
+var cors = require('cors');
 var bodyParser = require('body-parser');
 
 var app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post('/', function (req, res) {
     if(!req.body.id){
